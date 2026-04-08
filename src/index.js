@@ -9,7 +9,9 @@ app.listen(3000,async()=>{
     await connect();
     console.log("Mongo DB connected")
     const tweetRepository = new TweetRepository();
-    const tweets = await tweetRepository.getAll(0,1);
-    console.log(tweets[0].contentWithEmail);
+    // await tweetRepository.create({
+    //     content:"Content with Webhook",
+    //     userEmail:'xyz@gmail.com'
+    // })
 
 })

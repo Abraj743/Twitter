@@ -38,16 +38,6 @@ class TweetRepository{
 
     }
 
-    async update(id,data){
-        try {
-              const tweet = await Tweet.findByIdAndUpdate(id,data,{new:true});
-              return tweet; 
-      } catch (error) {
-        console.log(error);
-        
-      }
-
-    }
 
     async destroy(id){
         try {

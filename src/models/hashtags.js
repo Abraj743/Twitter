@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const hashtagSchema = new mongoose.Schema({
     title:{
         type:String,
-        require:true
+        require:true,
+        
     },
     tweets:[
         {

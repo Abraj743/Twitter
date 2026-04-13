@@ -10,13 +10,13 @@ app.listen(3000,async()=>{
     console.log(`Server started at port:3000`)
     await connect();
     console.log("Mongo DB connected")
-    const tweetService = new TweetService();
+    // const tweetService = new TweetService();
     
-    const response = await tweetService.create({
-        content:"Creating tweet with import syntax #learning"
-    })
+    // const response = await tweetService.create({
+    //     content:"Creating second tweet #FIRST #second"
+    // })
     
-    console.log(response);
+    // console.log(response);
    
 
 })

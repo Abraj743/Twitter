@@ -1,22 +1,17 @@
 import express from "express"
-const app = express();
 import {connect} from './config/database.js'
-import TweetService from "./services/tweet-service.js";
+import apiRoutes from './routes/index.js'
+import bodyParser from "body-parser";
+const app = express();
 
-
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use('/api',apiRoutes);
 
 app.listen(3000,async()=>{
     console.log(`Server started at port:3000`)
     await connect();
     console.log("Mongo DB connected")
-    // const tweetService = new TweetService();
-    
-    // const response = await tweetService.create({
-    //     content:"Creating second tweet #FIRST #second"
-    // })
-    
-    // console.log(response);
    
 
 })

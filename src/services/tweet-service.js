@@ -9,7 +9,7 @@ class TweetService {
       async create(data) {
            const content = data.content;
            let tags = content.match(/#[a-zA-Z0-9_]+/g);
-           tags = tags.map((tag)=> tag.substring(1)).map(tag => tag.toLowerCase());
+           tags = tags.map((tag)=> tag.substring(1).toLowerCase());
            console.log(tags);
            const tweet = await this.tweetRepository.create(data);
 

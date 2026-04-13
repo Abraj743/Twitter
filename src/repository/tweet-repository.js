@@ -1,5 +1,5 @@
-const Tweet = require('../models/tweet')
-const Comment = require('../models/comment');
+import Tweet from "../models/tweet.js";
+import Comment from "../models/comment.js";
 
 
 class TweetRepository{
@@ -64,4 +64,4 @@ class TweetRepository{
     }
 }
 
-module.exports = TweetRepository;
+export default TweetRepository;

@@ -1,8 +1,8 @@
-const express = require('express');
+import express from "express"
 const app = express();
-const connect = require('./config/database')
-const {TweetRepository} = require('./repository/index')
-const TweetService = require('./services/tweet-service')
+import {connect} from './config/database.js'
+import TweetService from "./services/tweet-service.js";
+
 
 
 
@@ -10,10 +10,12 @@ app.listen(3000,async()=>{
     console.log(`Server started at port:3000`)
     await connect();
     console.log("Mongo DB connected")
-    const  tweetService = new TweetService();
+    const tweetService = new TweetService();
     
-
-    const response = await tweetService.create({content:'This is after hashtag processing really #Excited. It is going to be #fun'})
+    const response = await tweetService.create({
+        content:"Creating tweet with import syntax #learning"
+    })
+    
     console.log(response);
    
 
